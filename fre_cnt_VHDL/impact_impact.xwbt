@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=E:\measure_f\impact.xsl
+OUTFILE=E:\measure_f\impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=E:\measure_f
+LICENSE=iMPACT
+USER_INFO=iMPACT

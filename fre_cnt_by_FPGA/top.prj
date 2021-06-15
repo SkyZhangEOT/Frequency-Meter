@@ -1,0 +1,7 @@
+verilog work "select.v"
+verilog work "m10_counter.v"
+verilog work "latch.v"
+verilog work "dynamic_seg.v"
+verilog work "div_fre.v"
+verilog work "control.v"
+verilog work "top.v"

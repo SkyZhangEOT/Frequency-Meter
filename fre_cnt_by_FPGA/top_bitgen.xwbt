@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Administrator\Desktop\fre_cnt\top.ncd
+OUTFILE=C:\Users\Administrator\Desktop\fre_cnt\top.bit
+FAMILY=Spartan3E
+PART=xc3s250e-5tq144
+WORKINGDIR=C:\Users\Administrator\Desktop\fre_cnt
+LICENSE=WebPack
+USER_INFO=__0_0_0

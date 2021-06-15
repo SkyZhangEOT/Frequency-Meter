@@ -1,0 +1,12 @@
+vhdtdtfi -lib work control.vhd -prj measure_f -o control.spl -module control -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e control.spl E:/measure_f/control.sym 
+xst -intstyle ise -ifn "E:/measure_f/control.xst" -ofn "E:/measure_f/control.syr" 
+vhdtdtfi -lib work control.vhd -prj measure_f -o control.spl -module control -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e control.spl E:/measure_f/control.sym 
+vhdtdtfi -lib work control.vhd -prj measure_f -o control.spl -module control -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e control.spl E:/measure_f/control.sym 
+vhdtdtfi -lib work control.vhd -prj measure_f -o control.spl -module control -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e control.spl E:/measure_f/control.sym 
+xst -intstyle ise -ifn "E:/measure_f/control.xst" -ofn "E:/measure_f/control.syr" 
+vhdtdtfi -lib work control.vhd -prj measure_f -o control.spl -module control -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e control.spl E:/measure_f/control.sym 

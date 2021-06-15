@@ -1,0 +1,7 @@
+[Inputs]
+Clockin
+[Outputs]
+ClockOut1k
+ClockOut100
+ClockOut10
+[BiDir]

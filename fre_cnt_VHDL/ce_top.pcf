@@ -1,0 +1,35 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sun Oct 27 23:55:51 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "low<0>" LOCATE = SITE "K16" LEVEL 1;
+COMP "low<1>" LOCATE = SITE "L16" LEVEL 1;
+COMP "low<2>" LOCATE = SITE "M15" LEVEL 1;
+COMP "low<3>" LOCATE = SITE "P16" LEVEL 1;
+COMP "lch" LOCATE = SITE "R16" LEVEL 1;
+COMP "gate" LOCATE = SITE "T14" LEVEL 1;
+COMP "csignal" LOCATE = SITE "A4" LEVEL 1;
+COMP "dig<0>" LOCATE = SITE "D5" LEVEL 1;
+COMP "dig<1>" LOCATE = SITE "E7" LEVEL 1;
+COMP "dig<2>" LOCATE = SITE "D6" LEVEL 1;
+COMP "dig<3>" LOCATE = SITE "F7" LEVEL 1;
+COMP "dig<4>" LOCATE = SITE "C5" LEVEL 1;
+COMP "dig<5>" LOCATE = SITE "E6" LEVEL 1;
+COMP "seg<0>" LOCATE = SITE "D8" LEVEL 1;
+COMP "dig<6>" LOCATE = SITE "C7" LEVEL 1;
+COMP "seg<1>" LOCATE = SITE "E8" LEVEL 1;
+COMP "dpout" LOCATE = SITE "C6" LEVEL 1;
+COMP "seg<2>" LOCATE = SITE "F9" LEVEL 1;
+COMP "seg<3>" LOCATE = SITE "F10" LEVEL 1;
+COMP "seg<4>" LOCATE = SITE "E10" LEVEL 1;
+COMP "seg<5>" LOCATE = SITE "D9" LEVEL 1;
+COMP "high<0>" LOCATE = SITE "J16" LEVEL 1;
+COMP "high<1>" LOCATE = SITE "K15" LEVEL 1;
+COMP "high<2>" LOCATE = SITE "M16" LEVEL 1;
+COMP "high<3>" LOCATE = SITE "N16" LEVEL 1;
+COMP "reset" LOCATE = SITE "T15" LEVEL 1;
+COMP "clockin" LOCATE = SITE "T8" LEVEL 1;
+COMP "qout" LOCATE = SITE "P4" LEVEL 1;
+SCHEMATIC END;
+

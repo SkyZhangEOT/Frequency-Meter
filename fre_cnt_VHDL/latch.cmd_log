@@ -1,0 +1,7 @@
+vhdtdtfi -lib work latch.vhd -prj measure_f -o latch.spl -module latch -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e latch.spl E:/measure_f/latch.sym 
+vhdtdtfi -lib work latch.vhd -prj measure_f -o latch.spl -module latch -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e latch.spl E:/measure_f/latch.sym 
+xst -intstyle ise -ifn "E:/measure_f/latch.xst" -ofn "E:/measure_f/latch.syr" 
+vhdtdtfi -lib work latch.vhd -prj measure_f -o latch.spl -module latch -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e latch.spl E:/measure_f/latch.sym 

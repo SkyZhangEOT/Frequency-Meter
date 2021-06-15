@@ -1,0 +1,14 @@
+vhdtdtfi -lib work multi.vhd -prj measure_f -o multi.spl -module multi -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e multi.spl E:/measure_f/multi.sym 
+vhdtdtfi -lib work multi.vhd -prj measure_f -o multi.spl -module multi -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e multi.spl E:/measure_f/multi.sym 
+vhdtdtfi -lib work multi.vhd -prj measure_f -o multi.spl -module multi -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+vhdtdtfi -lib work multi.vhd -prj measure_f -o multi.spl -module multi -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e multi.spl E:/measure_f/multi.sym 
+vhdtdtfi -lib work multi.vhd -prj measure_f -o multi.spl -module multi -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e multi.spl E:/measure_f/multi.sym 
+xst -intstyle ise -ifn "E:/measure_f/multi.xst" -ofn "E:/measure_f/multi.syr" 
+vhdtdtfi -lib work multi.vhd -prj measure_f -o multi.spl -module multi -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e multi.spl E:/measure_f/multi.sym 
+vhdtdtfi -lib work multi.vhd -prj measure_f -o multi.spl -module multi -template E:/Tools/ISE14.7/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e multi.spl C:/Users/PC/Desktop/measure_f/multi.sym 

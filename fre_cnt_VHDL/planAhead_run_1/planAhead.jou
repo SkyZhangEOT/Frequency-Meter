@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# PlanAhead v13.4 (64-bit)
+# Build 157570 by hdbuild on Fri Dec 16 13:06:31 MST 2011
+# Start of session at: Sat Oct 26 18:45:36 2019
+# Process ID: 4360
+# Log file: E:/measure_f/planAhead_run_1/planAhead.log
+# Journal file: E:/measure_f/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source E:/measure_f/pa.fromNetlist.tcl
+startgroup
+set_property loc PAD125 [get_ports {deg[1]}]
+endgroup
+exit
+stop_gui

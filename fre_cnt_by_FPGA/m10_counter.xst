@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/Administrator/Desktop/fre_cnt/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Administrator/Desktop/fre_cnt/xst"
+elaborate
+-ifn m10_counter.prj
+-ifmt mixed

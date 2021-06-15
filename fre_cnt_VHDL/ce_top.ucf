@@ -1,0 +1,42 @@
+NET "clockin" LOC = T8;
+NET "csignal" LOC = A4; 
+
+
+NET "dig[0]" LOC = D5; 
+NET "dig[1]" LOC = E7; 
+NET "dig[2]" LOC = D6; 
+NET "dig[3]" LOC = F7;
+NET "dig[4]" LOC = C5; 
+NET "dig[5]" LOC = E6; 
+NET "dig[6]" LOC = C7;
+NET "dpout" LOC = C6;
+
+NET "seg[0]" LOC = D8; 
+NET "seg[1]" LOC = E8; 
+NET "seg[2]" LOC = F9; 
+NET "seg[3]" LOC = F10;
+NET "seg[4]" LOC = E10; 
+NET "seg[5]" LOC = D9;
+
+
+NET "qout" LOC = P4;
+
+
+NET "lch" LOC = R16;
+NET "reset" LOC = T15; 
+NET "gate" LOC = T14;
+
+NET "low[0]" LOC = K16; 
+NET "low[1]" LOC = L16; 
+NET "low[2]" LOC = M15; 
+NET "low[3]" LOC = P16;
+NET "high[0]" LOC = J16; 
+NET "high[1]" LOC = K15; 
+NET "high[2]" LOC = M16; 
+NET "high[3]" LOC = N16;
+##NET "sel[0]" LOC = P6; 
+##NET "sel[1]" LOC = P141; 
+##NET "sel[2]" LOC = P136; 
+
+
+

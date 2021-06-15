@@ -1,0 +1,7 @@
+vhdl work "sele.vhd"
+vhdl work "multi.vhd"
+vhdl work "latch.vhd"
+vhdl work "fdiv3.vhd"
+vhdl work "counter6.vhd"
+vhdl work "control.vhd"
+vhdl work "ce_top.vhf"

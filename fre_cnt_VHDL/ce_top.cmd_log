@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "C:/Users/PC/Desktop/measure_f/ce_top.xst" -ofn "C:/Users/PC/Desktop/measure_f/ce_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ce_top.ucf -p xc6slx9-ftg256-2 ce_top.ngc ce_top.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ce_top_map.ncd ce_top.ngd ce_top.pcf 
+par -w -intstyle ise -ol high -mt off ce_top_map.ncd ce_top.ncd ce_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml ce_top.twx ce_top.ncd -o ce_top.twr ce_top.pcf -ucf ce_top.ucf 
+bitgen -intstyle ise -f ce_top.ut ce_top.ncd 

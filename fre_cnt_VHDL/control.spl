@@ -1,0 +1,7 @@
+[Inputs]
+inputsignal
+[Outputs]
+gate
+reset
+latch
+[BiDir]

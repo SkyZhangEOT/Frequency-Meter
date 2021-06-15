@@ -1,0 +1,305 @@
+
+#include <reg51.h>
+#include <ABSACC.H>
+#include <ctype.h>
+
+sbit pulse= P1^3;
+sbit AB = P1^2;
+sbit SIG1 = P1^1;
+sbit SIG2 = P1^0;
+sbit CLEAR = P1^4;
+
+unsigned char DispBuf[8];
+unsigned char s[]="2016020903014";
+unsigned char stop=0;
+unsigned char flag1=0;
+unsigned char flag2=0;
+unsigned char a[8]=0;
+
+ unsigned char A11=0,B11=0,C11=0,D11=0,A12=0,B12=0,C12=0,D12=0;
+
+void DispClear()
+{
+	unsigned char i;
+	for ( i=0; i<8; i++ )
+	{
+		DispBuf[i] = 0x00;
+	}
+}
+
+void DispChar(unsigned char x, unsigned char c, bit db)
+{
+	code unsigned char Tab[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
+	unsigned char t,j;
+	x &=0x07;
+	x = 7-x;
+	if(c=='-') t=0x40;
+		else t = toint(c);
+	if(t<16) t = Tab[t];
+		else t = 0x00;
+	if (db)  t |= 0x80;
+		else t &= 0x7f;
+	
+	 
+	DispBuf[x] = t;
+}
+
+
+
+void delay(unsigned int t)
+{
+	do{	
+	TH0=0XFA;
+	TL0=0X24;																	
+	TR0=1;
+	while(!TF0);
+	TF0=0;
+	TR0=0;
+	}while (--t != 0);
+	
+}
+
+//void T0INTSVC() interrupt 1
+//{
+//	TR0=0;
+//	TH0=0XFD;
+//	TL0=0XC0;
+//	TR0=1;
+	//LED=!LED;
+//	BUZZER = !BUZZER;
+//	}
+
+
+void T1INTSVC() interrupt 3
+{
+	code unsigned char com[] = {0x01,0x02,0x04,0x08,0x10,0x20,0x40,0x80};
+	static unsigned char n = 0;
+	TR1 = 0;
+	TH1 = 0xFC;
+	TL1 = 0x66;
+	TR1 = 1;
+	P2 = 0xFF;		//暂停显示
+	P3 = ~DispBuf[n];	//更新扫描数据
+	P2 = ~com[n];	//重新显示
+	n++;
+	n &= 0x07;
+}
+
+
+unsigned char Read(unsigned char i,unsigned char a,unsigned char b)
+{
+	unsigned char m;
+	AB=i;
+	SIG1=a;
+	SIG2=b;
+	delay(1);
+   	m=P3;
+	return m;	
+}
+
+void show_fre(long float fre)
+{
+	
+	unsigned i,j;
+	long int zheng  ;
+	int xiao;
+	zheng=fre/1;
+	xiao=(fre*100-zheng*100);
+	a[7]=zheng/10000;
+	zheng=zheng-a[7]*10000;
+	a[6]=zheng/1000;
+	zheng=zheng-a[6]*1000;
+	a[5]=zheng/100;
+	zheng=zheng-a[5]*100;
+	a[4]=zheng/10;
+	zheng=zheng-a[4]*10;
+	a[3]=zheng;
+	a[2]=xiao/10;
+	a[1]=xiao%10; 
+
+	for (i=0;i<8;i++)
+	{
+		s[7-i]=a[i]+'0';
+	}
+	if(flag1==1) s[7]='a';
+	if(flag2==1) s[7]='b';
+//	s[0]='1';
+
+}
+
+
+
+void DispInit()
+{
+	DispClear();
+	EA=0;
+	TMOD &= 0X0F;
+	TMOD |= 0X10;
+	TH1=0XFC;
+	TL1=0X66;
+	TR1=1;
+	ET1=1;
+	EA=1;
+}
+
+
+
+
+void SysInit()
+{
+	//P0=0X00;
+	EA=0;
+	IT0=1;
+	IT1=1;
+	EX0=1;
+	EX1=1;
+	EA=1;
+	TMOD &= 0XF0;
+	TMOD |= 0X01;
+	DispInit();
+	;
+}
+
+void INT0SVC() interrupt 0
+{
+	
+	flag1=1;
+}
+
+void INT1SVC() interrupt 2
+{
+	flag2=1;
+}
+
+
+
+
+void main()
+{
+	unsigned char x;
+	unsigned char i,j;
+	unsigned int time1;
+	long double STANDSIG;
+	long double TESTSIG;
+	long float FRE1;
+	long int FRE2;
+	bit dp;
+	TMOD &= 0X0F;
+	TMOD |= 0X01;
+	//STANDSIG=256*128;
+	//TESTSIG=STANDSIG;
+//	for(;;)
+//	{
+	//P0=0x60;
+	//BUZZER = !BUZZER;
+//	delay(1000);
+	//BUZZER = !BUZZER;
+//	P0=0x00;
+//	delay(1000);
+//	if (KEY2 ==0 ) break;
+//	}
+//	P0=0xff;
+//	TMOD &= 0XF0;
+//	TMOD |= 0X01;
+//	TH0=0XFD;
+//	TL0=0XC0;
+//	ET0=0;
+	SysInit();
+	dp=0;
+//	DispClear();
+//	while(1);
+	for(;;)
+	{
+	 
+		
+		for(i=0;i<13;i++)
+			{			
+				for(x=0;x<8;x++) 
+					{
+				//	if (stop == 1) DispClear();
+				//	else
+					if (flag1==1 || flag2==1)
+					{
+						if (flag2==1)
+						{
+							time1=10;
+							
+						}
+						if (flag1==1)
+						{
+							time1=2000;
+							
+						
+						}	
+						TR1=0;
+						ET1=0;
+						CLEAR = 0;
+						delay(time1);
+						CLEAR = 1;
+						delay(10);
+						pulse=1;
+						delay(time1);
+						pulse=0;
+					
+						//flag=0;
+						delay(time1);
+						A11=Read(1,0,0);
+						B11=Read(1,0,1);
+						C11=Read(1,1,0);
+						D11=Read(1,1,1);
+						if (flag1 == 1)
+						{
+						STANDSIG=C11*256+B11;
+						}
+						if (flag2 == 1)
+						{
+						STANDSIG=B11*256+A11;
+						}
+						A12=Read(0,0,0);
+						B12=Read(0,0,1);
+						C12=Read(0,1,0);
+						D12=Read(0,1,1);
+						if (flag1 == 1)
+						{
+						TESTSIG=B12*256+A12;
+						FRE1=(TESTSIG*4)*((5000000/1024)/STANDSIG);
+						}
+						if (flag2 == 1)
+						{
+						TESTSIG=C12*256*128+B12*128+A12/2.0;
+						FRE1=TESTSIG/STANDSIG*10000;
+						}
+						
+						show_fre(FRE1);
+						//FRE2=int(FRE1);
+						DispInit();
+						flag2=0;
+						flag1=0;
+					}
+					if(x == 4) dp=1;
+					else dp=0;
+					
+					for(j=0;j<4;j++)
+					{
+						if (s[j]!='0') break;
+						if (s[j]=='0') s[j]='0'+56;
+						
+					}
+					 DispChar(x,s[x],dp);
+					
+					}
+				delay(1000);
+				
+				//DispClear();
+				//delay(1000);
+			}
+			
+		
+		//	if (KEY3 ==0 ) break; 
+	}
+
+//	EA=1;
+//	TR0=1;
+	for(;;);
+	
+}

@@ -1,0 +1,33 @@
+NET "clk_50M" LOC = p128;
+NET "ext_signal" LOC = p15;
+
+NET "sel[0]" LOC = p6;
+NET "sel[1]" LOC = p141;
+NET "sel[2]" LOC = p136;
+
+NET "seg[0]" LOC = p53;
+NET "seg[1]" LOC = p54;
+NET "seg[2]" LOC = p77;
+NET "seg[3]" LOC = p76;
+NET "seg[4]" LOC = p58;
+NET "seg[5]" LOC = p75;
+NET "seg[6]" LOC = p52;
+NET "dp_out" LOC = p66;
+
+NET "an[0]" LOC = p81;
+NET "an[1]" LOC = p85;
+NET "an[2]" LOC = p83;
+NET "an[3]" LOC = p82;
+NET "an[4]" LOC = p43;
+NET "an[5]" LOC = p74;
+NET "an[6]" LOC = p59;
+NET "an[7]" LOC = p51;
+
+NET "led[0]" LOC = p122;
+NET "led[1]" LOC = p123;
+NET "led[2]" LOC = p124;
+NET "led[3]" LOC = p125;
+NET "led[4]" LOC = p126;
+NET "led[5]" LOC = p130;
+NET "led[6]" LOC = p131;
+NET "led[7]" LOC = p132;

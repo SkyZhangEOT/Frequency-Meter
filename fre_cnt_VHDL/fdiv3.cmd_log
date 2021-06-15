@@ -1,0 +1,13 @@
+vhdtdtfi -lib work fdiv3.vhd -prj measure_f -o fdiv3.spl -module fdiv3 -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e fdiv3.spl E:/measure_f/fdiv3.sym 
+vhdtdtfi -lib work fdiv3.vhd -prj measure_f -o fdiv3.spl -module fdiv3 -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e fdiv3.spl E:/measure_f/fdiv3.sym 
+vhdtdtfi -lib work fdiv3.vhd -prj measure_f -o fdiv3.spl -module fdiv3 -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e fdiv3.spl E:/measure_f/fdiv3.sym 
+vhdtdtfi -lib work fdiv3.vhd -prj measure_f -o fdiv3.spl -module fdiv3 -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e fdiv3.spl E:/measure_f/fdiv3.sym 
+vhdtdtfi -lib work fdiv3.vhd -prj measure_f -o fdiv3.spl -module fdiv3 -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e fdiv3.spl E:/measure_f/fdiv3.sym 
+xst -intstyle ise -ifn "E:/measure_f/fdiv3.xst" -ofn "E:/measure_f/fdiv3.syr" 
+vhdtdtfi -lib work fdiv3.vhd -prj measure_f -o fdiv3.spl -module fdiv3 -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e fdiv3.spl E:/measure_f/fdiv3.sym 

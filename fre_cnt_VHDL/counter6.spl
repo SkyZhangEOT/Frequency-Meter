@@ -1,0 +1,14 @@
+[Inputs]
+clockin
+csignal
+clear
+count_en
+[Outputs]
+over
+=result1[3:0]=
+=result2[3:0]=
+=result3[3:0]=
+=result4[3:0]=
+=result5[3:0]=
+=result6[3:0]=
+[BiDir]
